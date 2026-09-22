@@ -1,0 +1,220 @@
+{
+  "info": {
+    "name": "WST AI Module (WST-FR-14)",
+    "description": "Reorder Suggestion & Training Risk Flag. Import this file directly into Postman: File > Import > select this .json. Set the collection variable `token` to your INTERNAL_AI_TOKEN if you changed it from the dev default.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8001" },
+    { "key": "token", "value": "dev-secret-change-me" }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Health check",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blueprint Contract (recommended)",
+      "item": [
+        {
+          "name": "Predict Reorder - High risk part (PART_016, real data)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/predict-reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"partId\": \"PART_016\",\n  \"onHandQty\": 0,\n  \"minLevel\": 12,\n  \"maxLevel\": 116,\n  \"weeklyConsumption\": 9\n}"
+            }
+          }
+        },
+        {
+          "name": "Predict Reorder - Healthy part (PART_002, real data)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/predict-reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"partId\": \"PART_002\",\n  \"onHandQty\": 91,\n  \"minLevel\": 18,\n  \"maxLevel\": 107,\n  \"weeklyConsumption\": 5.75\n}"
+            }
+          }
+        },
+        {
+          "name": "Predict Reorder - with reserved & open PO (full accuracy)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/predict-reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"partId\": \"PART_099\",\n  \"onHandQty\": 20,\n  \"minLevel\": 15,\n  \"maxLevel\": 60,\n  \"weeklyConsumption\": 4,\n  \"reservedQty\": 10,\n  \"openPoQty\": 5\n}"
+            }
+          }
+        },
+        {
+          "name": "Student Risk - High risk (low attendance)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/student-risk",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"S-0123\",\n  \"attendanceRate\": 55,\n  \"missingAssessments\": 1,\n  \"unmetCompetencies\": 2\n}"
+            }
+          }
+        },
+        {
+          "name": "Student Risk - Low risk (good attendance)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/student-risk",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"S-0456\",\n  \"attendanceRate\": 95,\n  \"missingAssessments\": 0,\n  \"unmetCompetencies\": 0\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Legacy Contract",
+      "item": [
+        {
+          "name": "Reorder (snake_case)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"part_id\": \"P-0042\",\n  \"part_name\": \"Brake Pad\",\n  \"current_stock\": 5,\n  \"reserved_quantity\": 0,\n  \"min_stock\": 10,\n  \"max_stock\": 40,\n  \"open_po_quantity\": 0,\n  \"avg_weekly_consumption\": 7\n}"
+            }
+          }
+        },
+        {
+          "name": "Training Risk (snake_case)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/training-risk",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"student_id\": \"S-0123\",\n  \"attendance_rate\": 55,\n  \"unsigned_assessments\": 1,\n  \"missing_competencies\": 2,\n  \"actual_time_on_task\": 40,\n  \"expected_time_on_task\": 60\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard & Audit (no auth needed)",
+      "item": [
+        {
+          "name": "Reorder alerts",
+          "request": { "method": "GET", "url": "{{base_url}}/ai/reorder-alerts" }
+        },
+        {
+          "name": "Model info (release gate status)",
+          "request": { "method": "GET", "url": "{{base_url}}/ai/model-info" }
+        },
+        {
+          "name": "Prediction log (audit trail)",
+          "request": { "method": "GET", "url": "{{base_url}}/ai/predictions" }
+        },
+        {
+          "name": "Record decision (accept/override)",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/ai/predictions/:entry_id/decision?decision=accepted",
+            "variable": [{ "key": "entry_id", "value": "PASTE_ID_FROM_PREDICTIONS_LIST" }]
+          }
+        },
+        {
+          "name": "Record outcome (real-world result, once known)",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/ai/predictions/:entry_id/outcome?outcome=part_reordered_and_received",
+            "variable": [{ "key": "entry_id", "value": "PASTE_ID_FROM_PREDICTIONS_LIST" }]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error cases (verify status codes)",
+      "item": [
+        {
+          "name": "401 - missing token",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/ai/predict-reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"partId\": \"P-1\",\n  \"onHandQty\": 5,\n  \"minLevel\": 10,\n  \"maxLevel\": 40,\n  \"weeklyConsumption\": 7\n}"
+            }
+          }
+        },
+        {
+          "name": "400 - missing required field",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/predict-reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"partId\": \"P-1\",\n  \"minLevel\": 10,\n  \"maxLevel\": 40\n}"
+            }
+          }
+        },
+        {
+          "name": "422 - wrong field type",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-Internal-Token", "value": "{{token}}" }
+            ],
+            "url": "{{base_url}}/ai/predict-reorder",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"partId\": \"P-1\",\n  \"onHandQty\": \"not-a-number\",\n  \"minLevel\": 10,\n  \"maxLevel\": 40,\n  \"weeklyConsumption\": 7\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

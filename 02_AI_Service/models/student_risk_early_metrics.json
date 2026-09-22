@@ -1,0 +1,64 @@
+{
+  "variant": "early",
+  "features": [
+    "Midterm_Score",
+    "Assignments_Avg",
+    "Quizzes_Avg",
+    "Participation_Score",
+    "Study_Hours_per_Week",
+    "Attendance (%)",
+    "Stress_Level (1-10)",
+    "Sleep_Hours_per_Night"
+  ],
+  "selected_candidate": "logreg",
+  "decision_threshold": 0.423,
+  "trained_at": "2026-09-21T19:11:26.407462+00:00",
+  "dataset": {
+    "source": "students_performance.csv",
+    "total_rows": 5000,
+    "train_val_rows": 4000,
+    "test_rows": 1000,
+    "target": "at_risk = Grade in ('D','F')",
+    "positive_rate": 0.408
+  },
+  "rule_baseline": {
+    "precision": 0.557,
+    "recall": 0.679,
+    "f1": 0.612
+  },
+  "all_candidates": {
+    "logreg": {
+      "cv_auc": 0.749,
+      "threshold": 0.423,
+      "selection_note": "gate not clearable; using best-F1 threshold (CV)",
+      "test_precision": 0.568,
+      "test_recall": 0.794,
+      "test_f1": 0.663
+    },
+    "random_forest": {
+      "cv_auc": 0.741,
+      "threshold": 0.403,
+      "selection_note": "gate not clearable; using best-F1 threshold (CV)",
+      "test_precision": 0.528,
+      "test_recall": 0.833,
+      "test_f1": 0.646
+    },
+    "gradient_boosting": {
+      "cv_auc": 0.738,
+      "threshold": 0.303,
+      "selection_note": "gate not clearable; using best-F1 threshold (CV)",
+      "test_precision": 0.54,
+      "test_recall": 0.806,
+      "test_f1": 0.647
+    }
+  },
+  "release_gate": {
+    "target": "Precision >= 80% AND Recall >= 40%",
+    "gate_passed": false,
+    "selected_metrics": {
+      "precision": 0.568,
+      "recall": 0.794,
+      "f1": 0.663
+    }
+  }
+}
