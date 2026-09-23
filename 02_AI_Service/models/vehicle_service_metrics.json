@@ -1,0 +1,171 @@
+{
+  "trained_at": "2026-09-22T01:09:38.651375+00:00",
+  "dataset": {
+    "source": "vehicle_maintenance.csv",
+    "rows": 1139,
+    "n_parts": 14
+  },
+  "note": "Single-model (RandomForest) comparison per part, not a 3-way bake-off like the reorder/training-risk models \u2014 scope simplification to keep training time reasonable across 14 parts. Flagged here, not hidden.",
+  "per_part": {
+    "oil_filter": {
+      "skipped": true,
+      "reason": "insufficient class variation",
+      "rule_baseline": {
+        "precision": 1.0,
+        "recall": 0.75
+      }
+    },
+    "engine_oil": {
+      "skipped": true,
+      "reason": "insufficient class variation",
+      "rule_baseline": {
+        "precision": 1.0,
+        "recall": 0.75
+      }
+    },
+    "washer_plug_drain": {
+      "positive_rate": 0.881,
+      "cv_auc": 0.985,
+      "threshold": 0.001,
+      "model_precision": 0.882,
+      "model_recall": 1.0,
+      "rule_baseline": {
+        "precision": 0.918,
+        "recall": 0.75
+      },
+      "model_beats_rule": false
+    },
+    "dust_and_pollen_filter": {
+      "positive_rate": 0.279,
+      "cv_auc": 0.915,
+      "threshold": 0.566,
+      "model_precision": 0.757,
+      "model_recall": 0.875,
+      "rule_baseline": {
+        "precision": 0.281,
+        "recall": 0.748
+      },
+      "model_beats_rule": true
+    },
+    "whell_alignment_and_balancing": {
+      "positive_rate": 0.259,
+      "cv_auc": 0.832,
+      "threshold": 0.542,
+      "model_precision": 0.512,
+      "model_recall": 0.729,
+      "rule_baseline": {
+        "precision": 0.246,
+        "recall": 0.749
+      },
+      "model_beats_rule": true
+    },
+    "air_clean_filter": {
+      "positive_rate": 0.383,
+      "cv_auc": 0.922,
+      "threshold": 0.514,
+      "model_precision": 0.805,
+      "model_recall": 0.759,
+      "rule_baseline": {
+        "precision": 0.412,
+        "recall": 0.75
+      },
+      "model_beats_rule": true
+    },
+    "fuel_filter": {
+      "positive_rate": 0.287,
+      "cv_auc": 0.961,
+      "threshold": 0.663,
+      "model_precision": 0.754,
+      "model_recall": 0.8,
+      "rule_baseline": {
+        "precision": 0.303,
+        "recall": 0.752
+      },
+      "model_beats_rule": true
+    },
+    "spark_plug": {
+      "positive_rate": 0.063,
+      "cv_auc": 0.96,
+      "threshold": 0.569,
+      "model_precision": 0.419,
+      "model_recall": 0.929,
+      "rule_baseline": {
+        "precision": 0.085,
+        "recall": 0.75
+      },
+      "model_beats_rule": true
+    },
+    "brake_fluid": {
+      "positive_rate": 0.152,
+      "cv_auc": 0.984,
+      "threshold": 0.537,
+      "model_precision": 0.861,
+      "model_recall": 0.886,
+      "rule_baseline": {
+        "precision": 0.332,
+        "recall": 0.757
+      },
+      "model_beats_rule": true
+    },
+    "brake_and_clutch_oil": {
+      "positive_rate": 0.134,
+      "cv_auc": 0.892,
+      "threshold": 0.631,
+      "model_precision": 0.446,
+      "model_recall": 0.806,
+      "rule_baseline": {
+        "precision": 0.178,
+        "recall": 0.765
+      },
+      "model_beats_rule": true
+    },
+    "transmission_fluid": {
+      "positive_rate": 0.142,
+      "cv_auc": 0.983,
+      "threshold": 0.261,
+      "model_precision": 0.636,
+      "model_recall": 0.875,
+      "rule_baseline": {
+        "precision": 0.326,
+        "recall": 0.759
+      },
+      "model_beats_rule": true
+    },
+    "brake_pads": {
+      "positive_rate": 0.141,
+      "cv_auc": 0.938,
+      "threshold": 0.879,
+      "model_precision": 0.667,
+      "model_recall": 0.438,
+      "rule_baseline": {
+        "precision": 0.218,
+        "recall": 0.752
+      },
+      "model_beats_rule": false
+    },
+    "clutch": {
+      "positive_rate": 0.133,
+      "cv_auc": 0.953,
+      "threshold": 0.721,
+      "model_precision": 0.793,
+      "model_recall": 0.767,
+      "rule_baseline": {
+        "precision": 0.289,
+        "recall": 0.748
+      },
+      "model_beats_rule": true
+    },
+    "coolant": {
+      "positive_rate": 0.055,
+      "cv_auc": 0.926,
+      "threshold": 0.788,
+      "model_precision": 0.533,
+      "model_recall": 0.615,
+      "rule_baseline": {
+        "precision": 0.078,
+        "recall": 0.746
+      },
+      "model_beats_rule": true
+    }
+  }
+}

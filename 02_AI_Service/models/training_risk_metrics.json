@@ -1,0 +1,96 @@
+{
+  "model_version": "training-risk-model-v1.0-logreg",
+  "selected_candidate": "logreg",
+  "decision_threshold": 0.5,
+  "baseline_version": "rule-v1.0",
+  "trained_at": "2026-09-20T08:00:08.121259+00:00",
+  "dataset": {
+    "source": "synthetic_students_training_history.csv",
+    "total_rows": 400,
+    "train_val_rows": 320,
+    "test_rows": 80,
+    "split": "80/20 train_val/test (blueprint section 7). Threshold selected via 5-fold CV on train_val's out-of-fold predictions; test set touched exactly once, for final reporting only.",
+    "split_seed": 42,
+    "note": "100% synthetic data, per project rule 'Synthetic data only'."
+  },
+  "rule_baseline": {
+    "precision": 0.352,
+    "recall": 0.864,
+    "f1": 0.5
+  },
+  "all_candidates_evaluated": {
+    "logreg": {
+      "version": "training-risk-model-v1.0-logreg",
+      "default_threshold_0.5": {
+        "precision": 0.56,
+        "recall": 0.636,
+        "f1": 0.596
+      },
+      "best_precision_qualifying_threshold": {
+        "threshold": 0.824,
+        "selected_on": "5-fold cross-validated out-of-fold predictions (not test)",
+        "precision_on_test": 0.75,
+        "recall_on_test": 0.136,
+        "clears_precision_target": false,
+        "clears_min_recall": false
+      }
+    },
+    "random_forest": {
+      "version": "training-risk-model-v2.0-rf",
+      "default_threshold_0.5": {
+        "precision": 0.769,
+        "recall": 0.455,
+        "f1": 0.571
+      },
+      "best_precision_qualifying_threshold": {
+        "threshold": 0.678,
+        "selected_on": "5-fold cross-validated out-of-fold predictions (not test)",
+        "precision_on_test": 0.75,
+        "recall_on_test": 0.273,
+        "clears_precision_target": false,
+        "clears_min_recall": false
+      }
+    },
+    "gradient_boosting": {
+      "version": "training-risk-model-v2.0-gbm",
+      "default_threshold_0.5": {
+        "precision": 0.8,
+        "recall": 0.364,
+        "f1": 0.5
+      },
+      "best_precision_qualifying_threshold": {
+        "threshold": 0.658,
+        "selected_on": "5-fold cross-validated out-of-fold predictions (not test)",
+        "precision_on_test": 0.857,
+        "recall_on_test": 0.273,
+        "clears_precision_target": true,
+        "clears_min_recall": false
+      }
+    }
+  },
+  "release_gate": {
+    "target": "Precision >= 80% AND Recall >= 40%, both measured on the held-out test set at a threshold chosen using validation data only (precision requirement from blueprint section 7; minimum recall is an added engineering safeguard \u2014 see known_limitations)",
+    "gate_passed": false,
+    "selected_model": "logreg",
+    "selected_metrics": {
+      "threshold": 0.824,
+      "selected_on": "5-fold cross-validated out-of-fold predictions (not test)",
+      "precision_on_test": 0.75,
+      "recall_on_test": 0.136,
+      "clears_precision_target": false,
+      "clears_min_recall": false
+    }
+  },
+  "features_used": [
+    "attendance_rate",
+    "unsigned_assessments",
+    "missing_competencies",
+    "time_on_task_ratio"
+  ],
+  "known_limitations": [
+    "Trained entirely on synthetic data \u2014 precision/recall will not transfer directly to real students until retrained on real, clean history.",
+    "400 total rows is small for threshold selection. Three methodologies were tried, in order, as each revealed a flaw in the last: (1) selecting the threshold directly on the test set gave an optimistic ~81% precision / 59% recall \u2014 invalid because the test set was no longer truly held-out; (2) a single 80-row validation split gave unstable, sometimes degenerate thresholds (one candidate picked a threshold that flagged zero students); (3) 5-fold cross-validated out-of-fold predictions (used here) give a materially more stable threshold estimate by using all of train_val for selection while still never touching test before final reporting.",
+    "config.RISK_MIN_RECALL_FOR_GATE (40%) exists because a threshold can trivially hit 80%+ precision by flagging almost nobody \u2014 e.g. one earlier candidate hit 100% precision at 9% recall, which would miss the vast majority of at-risk students despite 'passing' on precision alone.",
+    "This ceiling is a property of the synthetic label-generation noise, not of model choice \u2014 logistic regression, random forest, and gradient boosting were all tried. Real student data is expected to have a different (likely more learnable) noise profile, so these exact numbers should be treated as a methodology demonstration, not a promise of real-world accuracy."
+  ]
+}

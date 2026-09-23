@@ -1,0 +1,101 @@
+part_id,category,current_stock,reserved_quantity,min_stock,max_stock,weekly_consumption_derived,available_stock,net_position,suggested_quantity,risk,reason
+PART_001,Suspension,10,12,21,50,8.29,-2.0,-2.0,52.0,High,Stock is over-reserved by 2 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_002,Transmission,91,3,18,107,5.75,88.0,88.0,0.0,Low,Available stock covers 15.3 week(s) of demand; net position is above minimum — no reorder needed
+PART_003,Electrical,56,3,25,50,4.83,53.0,53.0,0.0,Low,Available stock covers 11.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_004,Transmission,88,5,7,83,8.29,83.0,83.0,0.0,Low,Available stock covers 10.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_005,Transmission,49,18,5,145,2.3,31.0,31.0,0.0,Low,Available stock covers 13.5 week(s) of demand; net position is above minimum — no reorder needed
+PART_006,Brake,22,11,24,97,8.52,11.0,11.0,86.0,Medium,Available stock covers 1.3 week(s) of demand; net position (11) is below minimum (24)
+PART_007,Electrical,30,6,25,138,2.07,24.0,24.0,114.0,Low,Available stock covers 11.6 week(s) of demand; net position (24) is below minimum (25)
+PART_008,Electrical,93,9,27,50,5.52,84.0,84.0,0.0,Low,Available stock covers 15.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_009,Electrical,41,18,5,65,8.06,23.0,23.0,0.0,Medium,Available stock covers 2.9 week(s) of demand; net position is above minimum — no reorder needed
+PART_010,Transmission,98,6,7,110,11.28,92.0,92.0,0.0,Low,Available stock covers 8.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_011,Suspension,6,2,22,113,8.06,4.0,4.0,109.0,High,Available stock covers 0.5 week(s) of demand; net position (4) is below minimum (22)
+PART_012,Electrical,15,12,29,112,11.05,3.0,3.0,109.0,High,Available stock covers 0.3 week(s) of demand; net position (3) is below minimum (29)
+PART_013,Transmission,89,12,14,118,8.29,77.0,77.0,0.0,Low,Available stock covers 9.3 week(s) of demand; net position is above minimum — no reorder needed
+PART_014,Brake,59,17,26,71,4.14,42.0,42.0,0.0,Low,Available stock covers 10.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_015,Suspension,1,19,7,142,11.28,-18.0,-18.0,160.0,High,Stock is over-reserved by 18 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_016,Brake,0,7,12,116,8.98,-7.0,-7.0,123.0,High,Stock is over-reserved by 7 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_017,Suspension,47,8,18,125,7.36,39.0,39.0,0.0,Low,Available stock covers 5.3 week(s) of demand; net position is above minimum — no reorder needed
+PART_018,Transmission,11,6,28,75,5.52,5.0,5.0,70.0,High,Available stock covers 0.9 week(s) of demand; net position (5) is below minimum (28)
+PART_019,Engine,68,0,22,65,5.29,68.0,68.0,0.0,Low,Available stock covers 12.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_020,Suspension,36,2,19,100,7.36,34.0,34.0,0.0,Low,Available stock covers 4.6 week(s) of demand; net position is above minimum — no reorder needed
+PART_021,Brake,31,12,26,135,8.52,19.0,19.0,116.0,Medium,Available stock covers 2.2 week(s) of demand; net position (19) is below minimum (26)
+PART_022,Transmission,8,16,27,106,2.76,-8.0,-8.0,114.0,High,Stock is over-reserved by 8 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_023,Suspension,98,0,6,78,11.28,98.0,98.0,0.0,Low,Available stock covers 8.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_024,Engine,18,5,14,127,2.99,13.0,13.0,114.0,Low,Available stock covers 4.3 week(s) of demand; net position (13) is below minimum (14)
+PART_025,Engine,47,5,6,141,5.29,42.0,42.0,0.0,Low,Available stock covers 7.9 week(s) of demand; net position is above minimum — no reorder needed
+PART_026,Electrical,79,11,21,118,5.75,68.0,68.0,0.0,Low,Available stock covers 11.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_027,Electrical,2,12,12,96,8.06,-10.0,-10.0,106.0,High,Stock is over-reserved by 10 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_028,Brake,19,12,5,143,9.44,7.0,7.0,0.0,High,Available stock covers 0.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_029,Suspension,23,14,13,111,6.9,9.0,9.0,102.0,Medium,Available stock covers 1.3 week(s) of demand; net position (9) is below minimum (13)
+PART_030,Suspension,53,15,15,118,3.91,38.0,38.0,0.0,Low,Available stock covers 9.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_031,Electrical,32,10,26,125,11.28,22.0,22.0,103.0,Medium,Available stock covers 2.0 week(s) of demand; net position (22) is below minimum (26)
+PART_032,Suspension,23,4,20,65,4.6,19.0,19.0,46.0,Low,Available stock covers 4.1 week(s) of demand; net position (19) is below minimum (20)
+PART_033,Suspension,74,3,11,139,11.05,71.0,71.0,0.0,Low,Available stock covers 6.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_034,Engine,71,2,14,139,5.75,69.0,69.0,0.0,Low,Available stock covers 12.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_035,Electrical,35,18,27,97,5.06,17.0,17.0,80.0,Low,Available stock covers 3.4 week(s) of demand; net position (17) is below minimum (27)
+PART_036,Transmission,37,19,7,134,2.99,18.0,18.0,0.0,Low,Available stock covers 6.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_037,Electrical,83,17,22,88,4.37,66.0,66.0,0.0,Low,Available stock covers 15.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_038,Transmission,98,14,29,149,11.28,84.0,84.0,0.0,Low,Available stock covers 7.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_039,Engine,88,8,28,82,8.29,80.0,80.0,0.0,Low,Available stock covers 9.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_040,Brake,98,16,17,143,2.76,82.0,82.0,0.0,Low,Available stock covers 29.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_041,Suspension,24,13,11,72,9.44,11.0,11.0,0.0,Medium,Available stock covers 1.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_042,Engine,92,14,29,59,4.37,78.0,78.0,0.0,Low,Available stock covers 17.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_043,Suspension,17,0,8,118,2.76,17.0,17.0,0.0,Low,Available stock covers 6.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_044,Brake,81,2,17,149,2.07,79.0,79.0,0.0,Low,Available stock covers 38.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_045,Brake,65,15,24,83,1.61,50.0,50.0,0.0,Low,Available stock covers 31.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_046,Engine,53,10,5,101,6.44,43.0,43.0,0.0,Low,Available stock covers 6.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_047,Brake,34,11,12,144,3.22,23.0,23.0,0.0,Low,Available stock covers 7.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_048,Transmission,79,9,18,59,7.13,70.0,70.0,0.0,Low,Available stock covers 9.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_049,Brake,60,15,20,68,4.37,45.0,45.0,0.0,Low,Available stock covers 10.3 week(s) of demand; net position is above minimum — no reorder needed
+PART_050,Suspension,40,7,18,107,10.82,33.0,33.0,0.0,Low,Available stock covers 3.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_051,Suspension,99,5,16,145,3.68,94.0,94.0,0.0,Low,Available stock covers 25.5 week(s) of demand; net position is above minimum — no reorder needed
+PART_052,Suspension,32,11,23,50,1.15,21.0,21.0,29.0,Low,Available stock covers 18.2 week(s) of demand; net position (21) is below minimum (23)
+PART_053,Suspension,67,7,27,118,8.06,60.0,60.0,0.0,Low,Available stock covers 7.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_054,Transmission,32,3,19,53,2.76,29.0,29.0,0.0,Low,Available stock covers 10.5 week(s) of demand; net position is above minimum — no reorder needed
+PART_055,Electrical,13,7,6,65,5.75,6.0,6.0,0.0,Medium,Available stock covers 1.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_056,Engine,20,17,6,73,4.83,3.0,3.0,70.0,High,Available stock covers 0.6 week(s) of demand; net position (3) is below minimum (6)
+PART_057,Suspension,47,4,27,129,8.29,43.0,43.0,0.0,Low,Available stock covers 5.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_058,Brake,19,8,26,51,5.29,11.0,11.0,40.0,Medium,Available stock covers 2.1 week(s) of demand; net position (11) is below minimum (26)
+PART_059,Suspension,7,3,23,141,3.68,4.0,4.0,137.0,Medium,Available stock covers 1.1 week(s) of demand; net position (4) is below minimum (23)
+PART_060,Brake,6,16,29,81,8.98,-10.0,-10.0,91.0,High,Stock is over-reserved by 10 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_061,Brake,66,8,26,140,10.36,58.0,58.0,0.0,Low,Available stock covers 5.6 week(s) of demand; net position is above minimum — no reorder needed
+PART_062,Suspension,16,0,26,133,9.67,16.0,16.0,117.0,Medium,Available stock covers 1.7 week(s) of demand; net position (16) is below minimum (26)
+PART_063,Transmission,32,19,21,73,8.98,13.0,13.0,60.0,Medium,Available stock covers 1.4 week(s) of demand; net position (13) is below minimum (21)
+PART_064,Brake,47,12,24,61,3.22,35.0,35.0,0.0,Low,Available stock covers 10.9 week(s) of demand; net position is above minimum — no reorder needed
+PART_065,Brake,75,15,14,99,7.13,60.0,60.0,0.0,Low,Available stock covers 8.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_066,Suspension,58,12,10,84,1.15,46.0,46.0,0.0,Low,Available stock covers 40.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_067,Brake,85,13,19,82,8.06,72.0,72.0,0.0,Low,Available stock covers 8.9 week(s) of demand; net position is above minimum — no reorder needed
+PART_068,Brake,21,2,26,82,5.29,19.0,19.0,63.0,Low,Available stock covers 3.6 week(s) of demand; net position (19) is below minimum (26)
+PART_069,Suspension,29,5,15,110,6.67,24.0,24.0,0.0,Low,Available stock covers 3.6 week(s) of demand; net position is above minimum — no reorder needed
+PART_070,Suspension,37,17,9,100,9.9,20.0,20.0,0.0,Medium,Available stock covers 2.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_071,Engine,50,18,5,92,2.53,32.0,32.0,0.0,Low,Available stock covers 12.6 week(s) of demand; net position is above minimum — no reorder needed
+PART_072,Transmission,53,4,12,61,4.14,49.0,49.0,0.0,Low,Available stock covers 11.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_073,Transmission,7,14,25,116,10.82,-7.0,-7.0,123.0,High,Stock is over-reserved by 7 unit(s) (reserved exceeds on-hand quantity) — treat as High risk
+PART_074,Brake,26,1,16,114,2.76,25.0,25.0,0.0,Low,Available stock covers 9.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_075,Transmission,26,9,16,82,2.07,17.0,17.0,0.0,Low,Available stock covers 8.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_076,Brake,97,17,9,89,2.3,80.0,80.0,0.0,Low,Available stock covers 34.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_077,Engine,20,12,11,123,10.13,8.0,8.0,115.0,High,Available stock covers 0.8 week(s) of demand; net position (8) is below minimum (11)
+PART_078,Suspension,29,4,8,92,3.91,25.0,25.0,0.0,Low,Available stock covers 6.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_079,Suspension,96,0,10,93,8.75,96.0,96.0,0.0,Low,Available stock covers 11.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_080,Suspension,27,0,17,78,1.61,27.0,27.0,0.0,Low,Available stock covers 16.8 week(s) of demand; net position is above minimum — no reorder needed
+PART_081,Transmission,63,17,24,62,10.59,46.0,46.0,0.0,Low,Available stock covers 4.3 week(s) of demand; net position is above minimum — no reorder needed
+PART_082,Engine,96,14,19,61,2.99,82.0,82.0,0.0,Low,Available stock covers 27.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_083,Transmission,68,16,7,144,9.21,52.0,52.0,0.0,Low,Available stock covers 5.6 week(s) of demand; net position is above minimum — no reorder needed
+PART_084,Transmission,60,10,27,95,9.67,50.0,50.0,0.0,Low,Available stock covers 5.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_085,Engine,47,16,12,51,2.07,31.0,31.0,0.0,Low,Available stock covers 15.0 week(s) of demand; net position is above minimum — no reorder needed
+PART_086,Engine,18,12,24,84,6.21,6.0,6.0,78.0,High,Available stock covers 1.0 week(s) of demand; net position (6) is below minimum (24)
+PART_087,Engine,3,0,20,136,0.46,3.0,3.0,133.0,Low,Available stock covers 6.5 week(s) of demand; net position (3) is below minimum (20)
+PART_088,Engine,34,1,17,130,1.15,33.0,33.0,0.0,Low,Available stock covers 28.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_089,Suspension,63,8,22,139,6.67,55.0,55.0,0.0,Low,Available stock covers 8.2 week(s) of demand; net position is above minimum — no reorder needed
+PART_090,Electrical,48,2,14,57,8.52,46.0,46.0,0.0,Low,Available stock covers 5.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_091,Electrical,16,0,23,142,8.75,16.0,16.0,126.0,Medium,Available stock covers 1.8 week(s) of demand; net position (16) is below minimum (23)
+PART_092,Engine,43,15,21,75,4.37,28.0,28.0,0.0,Low,Available stock covers 6.4 week(s) of demand; net position is above minimum — no reorder needed
+PART_093,Electrical,91,5,28,123,1.84,86.0,86.0,0.0,Low,Available stock covers 46.7 week(s) of demand; net position is above minimum — no reorder needed
+PART_094,Electrical,29,16,23,139,11.05,13.0,13.0,126.0,Medium,Available stock covers 1.2 week(s) of demand; net position (13) is below minimum (23)
+PART_095,Engine,92,4,27,83,10.36,88.0,88.0,0.0,Low,Available stock covers 8.5 week(s) of demand; net position is above minimum — no reorder needed
+PART_096,Electrical,45,4,9,56,0.23,41.0,41.0,0.0,Low,Available stock covers 178.1 week(s) of demand; net position is above minimum — no reorder needed
+PART_097,Transmission,5,5,25,117,5.06,0.0,0.0,117.0,High,Available stock covers 0.0 week(s) of demand; net position (0) is below minimum (25)
+PART_098,Brake,98,2,27,107,3.91,96.0,96.0,0.0,Low,Available stock covers 24.5 week(s) of demand; net position is above minimum — no reorder needed
+PART_099,Brake,36,4,13,124,1.61,32.0,32.0,0.0,Low,Available stock covers 19.9 week(s) of demand; net position is above minimum — no reorder needed
+PART_100,Engine,23,4,16,78,5.75,19.0,19.0,0.0,Low,Available stock covers 3.3 week(s) of demand; net position is above minimum — no reorder needed

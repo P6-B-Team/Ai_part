@@ -1,0 +1,27 @@
+services:
+  ai-service:
+    build: .
+    container_name: workshop-ai-service
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - INTERNAL_AI_TOKEN=${INTERNAL_AI_TOKEN:-dev-secret-change-me}
+    volumes:
+      # Named volume, NOT a bind mount to the source tree — this is the
+      # fix for "prediction_log gets wiped": the SQLite file now lives
+      # here and survives `docker compose down && up`, container
+      # recreation, and image rebuilds. Only `docker compose down -v`
+      # deletes it.
+      - ai_prediction_log:/app/storage
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  ai_prediction_log:

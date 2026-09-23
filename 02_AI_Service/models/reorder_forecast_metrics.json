@@ -1,0 +1,63 @@
+{
+  "forecast_version": "reorder-forecast-v1.0-linreg",
+  "trained_at": "2026-09-17T23:28:52.031944+00:00",
+  "dataset": {
+    "source": "synthetic_parts_consumption_history.csv",
+    "n_parts_evaluated": 60,
+    "holdout_weeks_per_part": 4,
+    "note": "100% synthetic data, per project rule 'Synthetic data only'."
+  },
+  "aggregate_evaluation": {
+    "model": {
+      "mae": 2.01,
+      "wape": 0.154
+    },
+    "moving_average_baseline": {
+      "mae": 2.25,
+      "wape": 0.173
+    }
+  },
+  "model_beats_baseline": true,
+  "per_sku_sample": [
+    {
+      "part_id": "P-2000",
+      "model_mae": 2.529,
+      "baseline_mae": 2.987,
+      "model_wape": 0.133,
+      "baseline_wape": 0.157
+    },
+    {
+      "part_id": "P-2001",
+      "model_mae": 1.16,
+      "baseline_mae": 1.625,
+      "model_wape": 0.111,
+      "baseline_wape": 0.156
+    },
+    {
+      "part_id": "P-2002",
+      "model_mae": 1.056,
+      "baseline_mae": 1.325,
+      "model_wape": 0.089,
+      "baseline_wape": 0.112
+    },
+    {
+      "part_id": "P-2003",
+      "model_mae": 1.807,
+      "baseline_mae": 1.619,
+      "model_wape": 0.13,
+      "baseline_wape": 0.116
+    },
+    {
+      "part_id": "P-2004",
+      "model_mae": 0.894,
+      "baseline_mae": 0.775,
+      "model_wape": 0.228,
+      "baseline_wape": 0.197
+    }
+  ],
+  "known_limitations": [
+    "Trained on synthetic seasonal/trend patterns; real consumption may be spikier (e.g. campaign-driven repairs) than this generator models.",
+    "Only 26 weeks of synthetic history per part \u2014 short for reliably detecting yearly seasonality.",
+    "Linear regression on raw lags is a simple stretch baseline, not a production forecasting model (no holiday/promo calendar)."
+  ]
+}
